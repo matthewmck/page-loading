@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prefetch & Subresources</title>
+    <link rel="prefetch"
+        href="https://images.unsplash.com/photo-1592840835081-4000b73b37d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80">
+    <link rel="prefetch"
+        href="https://images.unsplash.com/photo-1590664043095-a2e8a55bb571?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+    <link rel="prefetch"
+        href="https://images.unsplash.com/photo-1590664101727-ddb7d14ccb8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60">
+</head>
+
+<body>
+    <h1>Prefetch & Subresources</h1>
+    <h2>Prefetch</h2>
+    <p>If we’re certain that a specific resource will be required in the future, then we can ask the browser to request
+        that item and store it in the cache for reference later.</p>
+    <p>Unlike DNS prefetching, we’re actually requesting and downloading that asset and storing it in the cache.</p>
+    <p>Can make a traditional website feel like an spa</p>
+    <h2>Subresources</h2>
+    <p>Identifies the resources that are the highest priority and should be requested before prefetched items.</p>
+</body>
+
+</html>

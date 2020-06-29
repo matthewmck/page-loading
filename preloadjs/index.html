@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="progress"></div>
+    <div id="gallery"></div>
+
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script>
+        let progress = document.getElementById('progress');
+        let gallery = document.getElementById('gallery');
+
+        let queue = new createjs.LoadQueue(false);
+
+        queue.on("progress", event => {
+            let progress = Math.floor(event.progress * 100);
+            this.progress.style.width = `${progress}%`;
+            if (progress == 100) {
+                console.log('all done')
+                document.querySelector('body').style.background = 'white';
+            }
+        })
+
+        queue.on("complete", event => {
+            gallery.classList.add('fadeIn');
+            setTimeout(() => {
+                progress.classList.add('fadeOut');
+            }, 500)
+        })
+
+        queue.on("fileload", handleFileComplete);
+        queue.loadFile('https://static.scientificamerican.com/sciam/cache/file/7A715AD8-449D-4B5A-ABA2C5D92D9B5A21_source.png')
+        queue.loadFile('https://nature.mdc.mo.gov/sites/default/files/media/field-guide/Indigo_Bunting_side_11-28-16.jpg')
+        queue.loadFile('https://www.hakaimagazine.com/wp-content/uploads/header-gulf-birds.jpg')
+        queue.loadFile('https://www.nationalgeographic.com/content/dam/animals/pictures/hero/birds-hero.ngsversion.1498516940057.adapt.1900.1.jpg')
+        queue.loadFile('https://c1.staticflickr.com/6/5553/31118853816_59e1edc5d0_b.jpg')
+        queue.loadFile('https://birdwatchinghq.com/wp-content/uploads/2020/02/three-bald-eagles.jpg')
+
+        function handleFileComplete(event) {
+            let item = event.item;
+            let type = item.type;
+
+            if (type == createjs.Types.IMAGE) {
+                gallery.appendChild(event.result);
+            }
+        }
+    </script>
+</body>
+
+</html>

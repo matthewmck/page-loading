@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Click</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        .grid__item {
+            height: 350px;
+            width: 100%;
+            background-color: pink;
+        }
+
+        .grid__item img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="/instantclick/">Home</a></li>
+            <li><a href="/instantclick/test.html">Test Page</a></li>
+        </ul>
+    </nav>
+
+    <script src="http://instantclick.io/v3.1.0/instantclick.min.js"></script>
+    <script>InstantClick.init();</script>
+</body>
+
+</html>

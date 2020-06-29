@@ -1,0 +1,75 @@
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+nav {
+    background: rgb(255, 0, 0);
+    padding: 0.5em;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+}
+
+main {
+    width: 80%;
+    margin: 5em auto;
+}
+
+main a {
+    display: inline-block;
+    background: red;
+    color: white;
+    padding: 0.8em;
+    margin-top: 2em;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: red;
+    left: 0;
+    top: 0;
+    transform: scale(0);
+    transform-origin: left;
+}
+
+.transition-fade {
+    transition: 0.4s;
+    opacity: 1;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+    transform: translateY(-100px);
+}
+
+.transition-left {
+    transition: 0.4s;
+    transform: translateX(0);
+}
+
+html.is-animating .transition-left {
+    opacity: 0;
+    transform: translateX(-100px);
+}
+
+.transition-wipe {
+    transition: 0.7s cubic-bezier(0, 0, 0.58, 1);
+    transform: scaleX(0);
+}
+
+html.is-animating .transition-wipe {
+    transform: scaleX(1)
+}

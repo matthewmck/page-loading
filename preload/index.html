@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preload</title>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="preload" as="style" href="style2.css">
+</head>
+
+<body>
+    <h1>HTML Preload Attribute</h1>
+    <p>Preload will fetch resources on current page. It will set the resource to high priority and load it before
+        standard resources. Because the browser couples resource fetching and execution of similar
+        items, using the
+        as attribute is recommended for preload.</p>
+    <p><strong>As Options</strong></p>
+    <ul>
+        <li>script</li>
+        <li>style</li>
+        <li>audio</li>
+        <li>video</li>
+        <li>image</li>
+        <li>font</li>
+        <li>document</li>
+        <li>track</li>
+        <li>worker</li>
+        <li>fetch</li>
+        <li>object</li>
+        <li>embed</li>
+    </ul>
+
+    <p>Not supported on IE or Firefox, <a href="https://caniuse.com/#feat=link-rel-preload" target="_blank">CanIUse</a>
+    </p>
+</body>
+
+</html>

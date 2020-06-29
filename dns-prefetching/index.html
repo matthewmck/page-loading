@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNS Prefetching</title>
+    <link rel="preconnect" href="#">
+    <link rel="dns-prefetch" href="#">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>HTML dns-prefetch and preconnect attribute</h1>
+    <h2>DNS Prefetch</h2>
+    <p>This notifies the client that there are assets we’ll need later from a specific URL so the browser can resolve
+        the DNS as quickly as possible. Then, when we request a file from it, we’ll no longer have to wait for the DNS
+        lookup.</p>
+
+    <h2>Preconnect</h2>
+    <p>Much like the DNS prefetch method, preconnect will resolve the DNS but it will also make the TCP handshake, and
+        optional TLS negotiation. It can be used like this</p>
+    <h2>Best practices</h2>
+    dns-prefetch is only effective for DNS lookups on cross-origin domains, so avoid using it to point to your
+    site or domain. This is because the IP behind your site’s domain will have already been resolved by the time
+    the browser sees the hint.
+
+    <p>Bear in mind that while
+        preconnect is pretty cheap, it can still take up valuable CPU time, particularly on secure
+        connections. This is especially bad if the connection isn’t used within 10 seconds, as the browser closes it,
+        wasting all of that early connection work.</p>
+    <p>In general, try to use
+        preload wherever you can, as it’s a more comprehensive performance tweak, but do keep preconnect in
+        your toolbelt for the edge cases.</p>
+    <p>You want to speed up more than 4-6 domains. It’s not recommended to use preconnect with more than 4-6 domains, as
+        opening and keeping a connection is an expensive
+        operation. dns-prefetch is more lightweight, so use it for other third-party domains
+        if you want to speed them up too.</p>
+
+    <p><a href="https://developers.google.com/web/fundamentals/performance/resource-prioritization">source</a></p>
+</body>
+
+</html>
